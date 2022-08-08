@@ -1,0 +1,33 @@
+@use 'variables';
+
+/* Creacion de mixins */
+
+
+/* ES COMO UNA FUNCION EN PROGRMACION */
+
+@mixin desktop_view ($width, $height:unset, $font-size:unset) {
+    /* le agregamos un argumento   variable */
+    @media(min-width: 1440px) {
+        width: $width;
+        height: $height;
+        font-size: $font-size;
+    }
+}
+
+@mixin button ($bg-color, $br-color, $fn-color, $width, $height) {
+    background-color: $bg-color;
+    border: none;
+    border: 1px solid $br-color;
+    border-radius: 50px;
+    color: $fn-color;
+    width: $width;
+    height: $height;
+}
+
+@mixin button-hover ($bg-color) {
+    &:hover {
+        cursor: pointer;
+        background-color: $bg-color;
+        color: variables.$white;
+    }
+}

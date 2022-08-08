@@ -1,0 +1,56 @@
+@use 'variables';
+@use 'mixins';
+
+/* manda llamar los archivos de  '_variables */
+
+body {
+    background-color: variables.$white;
+    font-family: variables.$Body-font;
+    color: variables.$Very_Dark_Cyan
+}
+
+.main-container {
+    border: 1px solid red;
+    width: 375px;
+    margin: 0 auto 25px;
+    @include mixins.desktop_view(1400px);
+    /* Asi se utiliza un mixin */
+}
+
+.navbar {
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: space-between;
+    margin: 25px auto 100px;
+    @include mixins.desktop_view(1300px);
+    &__logo {
+        width: 95px;
+        height: 16px;
+        @include mixins.desktop_view(240px, 38px)
+    }
+    &__button {
+        @include mixins.button(variables.$white, variables.$Light_Pink, variables.$Light_Pink, 80px, 24px);
+        @include mixins.desktop_view(134px, 42px);
+        @include mixins.button-hover(variables.$Light_Pink);
+    }
+    /* Una manera de hacerlo 
+    &__button:hover{
+
+    } */
+}
+
+.header {
+    &__title {
+        font-family: variables.$Headings-font;
+        text-align: center;
+        border: 2px solid red;
+        width: 265px;
+        font-size: 1.48em;
+        margin: 0 auto 36px;
+        @include mixins.desktop_view(1010px, unset, 2.98em);
+    }
+    &__description {
+        text-align: center;
+        margin: 0 auto 49px;
+    }
+}
