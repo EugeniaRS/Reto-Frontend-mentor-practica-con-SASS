@@ -58,6 +58,7 @@ body {
   border: none;
   border: 1px solid hsl(321deg, 100%, 78%);
   border-radius: 50px;
+  display: block;
   color: hsl(321deg, 100%, 78%);
   width: 80px;
   height: 24px;
@@ -79,7 +80,7 @@ body {
 .header__title {
   font-family: "Poppins", sans-serif;
   text-align: center;
-  border: 2px solid red;
+  /*  border: 2px solid red; */
   width: 265px;
   font-size: 1.48em;
   margin: 0 auto 36px;
@@ -95,6 +96,61 @@ body {
 .header__description {
   text-align: center;
   margin: 0 auto 49px;
+  font-weight: 600;
+  font-size: 0.8em;
+  width: 290px;
+  /* le agregamos un argumento   variable */
+}
+@media (min-width: 1440px) {
+  .header__description {
+    width: 590px;
+    height: 80px;
+    font-size: 1.25em;
+  }
+}
+.header__button {
+  background-color: hsl(322deg, 100%, 66%);
+  border: none;
+  border: 1px solid unset;
+  border-radius: 50px;
+  display: block;
+  color: hsl(207deg, 100%, 98%);
+  width: 200px;
+  height: 40px;
+  margin: 0 auto;
+  /* le agregamos un argumento   variable */
+  margin-bottom: 290px;
+}
+@media (min-width: 1440px) {
+  .header__button {
+    width: 400px;
+    height: 80px;
+    font-size: 1.25em;
+  }
+}
+.header__button:hover {
+  cursor: pointer;
+  background-color: hsl(321deg, 100%, 78%);
+  color: #fff;
+}
+.header__screen-mockups {
+  width: 300px;
+  display: block;
+  margin: 0 auto 138px;
+  /* le agregamos un argumento   variable */
+}
+@media (min-width: 1440px) {
+  .header__screen-mockups {
+    width: 1020px;
+    height: 725px;
+    font-size: unset;
+  }
+}
+
+.section_stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */

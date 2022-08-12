@@ -14,14 +14,18 @@
     }
 }
 
-@mixin button ($bg-color, $br-color, $fn-color, $width, $height) {
+@mixin button ($bg-color, $br-color, $fn-color, $width, $height, $center) {
     background-color: $bg-color;
     border: none;
     border: 1px solid $br-color;
     border-radius: 50px;
+    display: block;
     color: $fn-color;
     width: $width;
     height: $height;
+    @if $center==true {
+        margin: 0 auto;
+    }
 }
 
 @mixin button-hover ($bg-color) {
@@ -29,5 +33,21 @@
         cursor: pointer;
         background-color: $bg-color;
         color: variables.$white;
+    }
+}
+
+@mixin stats ($logo) {
+    margin-bottom: 90px;
+    &__logo {
+        width: $logo;
+    }
+    &__stats {
+        font-size: 4em;
+        margin: 0;
+    }
+    &__description {
+        font-size: 0.8em;
+        text-align: center;
+        @content
     }
 }

@@ -29,7 +29,7 @@ body {
         @include mixins.desktop_view(240px, 38px)
     }
     &__button {
-        @include mixins.button(variables.$white, variables.$Light_Pink, variables.$Light_Pink, 80px, 24px);
+        @include mixins.button(variables.$white, variables.$Light_Pink, variables.$Light_Pink, 80px, 24px, false);
         @include mixins.desktop_view(134px, 42px);
         @include mixins.button-hover(variables.$Light_Pink);
     }
@@ -43,7 +43,7 @@ body {
     &__title {
         font-family: variables.$Headings-font;
         text-align: center;
-        border: 2px solid red;
+        /*  border: 2px solid red; */
         width: 265px;
         font-size: 1.48em;
         margin: 0 auto 36px;
@@ -52,5 +52,49 @@ body {
     &__description {
         text-align: center;
         margin: 0 auto 49px;
+        font-weight: 600;
+        font-size: 0.8em;
+        width: 290px;
+        @include mixins.desktop_view(590px, 80px, 1.25em);
+    }
+    &__button {
+        @include mixins.button(variables.$Pink, unset, variables.$Very_Pale_Blue, 200px, 40px, true);
+        @include mixins.desktop_view(400px, 80px, 1.25em);
+        @include mixins.button-hover(variables.$Light_Pink);
+        margin-bottom: 290px;
+    }
+    &__screen-mockups {
+        width: 300px;
+        display: block;
+        margin: 0 auto 138px;
+        @include mixins.desktop-view(1020px, 725px);
+    }
+}
+
+.section-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: red;
+    .comunities {
+        @include mixins.stats(32px);
+    }
+    .messages {
+        @include mixins.stats(24px) {
+            width: 69px;
+            margin: auto;
+        }
+    }
+}
+
+.section-grow-together {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .image-container {}
+    .image-container__ilustration {}
+    .description {
+        &__title {}
+        &__content {}
     }
 }
