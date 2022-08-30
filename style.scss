@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@700&display=swap");
+/* creacion de variables */ /* Creacion de mixins */
+/* ES COMO UNA FUNCION EN PROGRMACION */
+/* manda llamar los archivos de  '_variables */
+body {
+  background-color: #fff;
+  font-family: "Open Sans", sans-serif;
+  color: hsl(192deg, 100%, 9%);
+}
+
+.main-container {
+  border: 1px solid red;
+  width: 375px;
+  margin: 0 auto 25px;
+  /* le agregamos un argumento   variable */
+  /* Asi se utiliza un mixin */
+}
+@media (min-width: 1440px) {
+  .main-container {
+    width: 1400px;
+    height: unset;
+    font-size: unset;
+  }
+}
+
+.navbar {
+  /* border: 1px solid green; */
+  display: flex;
+  justify-content: space-between;
+  margin: 25px auto 100px;
+  /* le agregamos un argumento   variable */
+  /* Una manera de hacerlo 
+  &__button:hover{
+
+  } */
+}
+@media (min-width: 1440px) {
+  .navbar {
+    width: 1300px;
+    height: unset;
+    font-size: unset;
+  }
+}
+.navbar__logo {
+  width: 95px;
+  height: 16px;
+  /* le agregamos un argumento   variable */
+}
+@media (min-width: 1440px) {
+  .navbar__logo {
+    width: 240px;
+    height: 38px;
+    font-size: unset;
+  }
+}
+.navbar__button {
+  background-color: #fff;
+  border: none;
+  border: 1px solid hsl(321deg, 100%, 78%);
+  border-radius: 50px;
+  display: block;
+  color: hsl(321deg, 100%, 78%);
+  width: 80px;
+  height: 24px;
+  /* le agregamos un argumento   variable */
+}
+@media (min-width: 1440px) {
+  .navbar__button {
+    width: 134px;
+    height: 42px;
+    font-size: unset;
+  }
+}
+.navbar__button:hover {
+  cursor: pointer;
+  background-color: hsl(321deg, 100%, 78%);
+  color: #fff;
+}
+
+.header__title {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  /*  border: 2px solid red; */
+  width: 265px;
+  font-size: 1.48em;
+  margin: 0 auto 36px;
+  /* le agregamos un argumento   variable */
+}
+@media (min-width: 1440px) {
+  .header__title {
+    width: 1010px;
+    height: unset;
+    font-size: 2.98em;
+  }
+}
+.header__description {
+  text-align: center;
+  margin: 0 auto 49px;
+  font-weight: 600;
+  font-size: 0.8em;
+  width: 290px;
+  /* le agregamos un argumento   variable */
+}
+@media (min-width: 1440px) {
+  .header__description {
+    width: 590px;
+    height: 80px;
+    font-size: 1.25em;
+  }
+}
+.header__button {
+  background-color: hsl(322deg, 100%, 66%);
+  border: none;
+  border: 1px solid unset;
+  border-radius: 50px;
+  display: block;
+  color: hsl(207deg, 100%, 98%);
+  width: 200px;
+  height: 40px;
+  margin: 0 auto;
+  /* le agregamos un argumento   variable */
+  margin-bottom: 290px;
+}
+@media (min-width: 1440px) {
+  .header__button {
+    width: 400px;
+    height: 80px;
+    font-size: 1.25em;
+  }
+}
+.header__button:hover {
+  cursor: pointer;
+  background-color: hsl(321deg, 100%, 78%);
+  color: #fff;
+}
+.header__screen-mockups {
+  width: 300px;
+  display: block;
+  margin: 0 auto 138px;
+  /* le agregamos un argumento   variable */
+}
+@media (min-width: 1440px) {
+  .header__screen-mockups {
+    width: 1020px;
+    height: 725px;
+    font-size: unset;
+  }
+}
+
+.section-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: red;
+}
+.section-stats .comunities {
+  margin-bottom: 90px;
+}
+.section-stats .comunities__logo {
+  width: 32px;
+}
+.section-stats .comunities__stats {
+  font-size: 4em;
+  margin: 0;
+}
+.section-stats .comunities__description {
+  font-size: 0.8em;
+  text-align: center;
+}
+.section-stats .messages {
+  margin-bottom: 90px;
+}
+.section-stats .messages__logo {
+  width: 24px;
+}
+.section-stats .messages__stats {
+  font-size: 4em;
+  margin: 0;
+}
+.section-stats .messages__description {
+  font-size: 0.8em;
+  text-align: center;
+  width: 69px;
+  margin: auto;
+}
+
+.section-grow-together {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style.scss.map */

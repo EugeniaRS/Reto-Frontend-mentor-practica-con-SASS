@@ -4,13 +4,14 @@
 /* manda llamar los archivos de  '_variables */
 
 body {
-    background-color: variables.$white;
+    /*   background-color: variables.$white; */
+    /*     background-color: cadetblue; */
     font-family: variables.$Body-font;
     color: variables.$Very_Dark_Cyan
 }
 
 .main-container {
-    border: 1px solid red;
+    /*   border: 1px solid red; */
     width: 375px;
     margin: 0 auto 25px;
     @include mixins.desktop_view(1400px);
@@ -30,6 +31,7 @@ body {
     }
     &__button {
         @include mixins.button(variables.$white, variables.$Light_Pink, variables.$Light_Pink, 80px, 24px, false);
+        margin-right: 20px;
         @include mixins.desktop_view(134px, 42px);
         @include mixins.button-hover(variables.$Light_Pink);
     }
@@ -75,26 +77,118 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: red;
+    @include mixins.section-stats-desktop;
     .comunities {
         @include mixins.stats(32px);
+        @include mixins.stats-desktop(50px);
     }
     .messages {
         @include mixins.stats(24px) {
             width: 69px;
             margin: auto;
         }
+        @include mixins.stats-desktop(42px);
     }
+    @include mixins.banner('', '../images/bg-section-top-mobile-1.svg');
+    @include mixins.banner-desktop('', '../images/bg-section-top-desktop-1.svg');
 }
 
 .section-grow-together {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .image-container {}
-    .image-container__ilustration {}
-    .description {
-        &__title {}
-        &__content {}
+    background-color: variables.$Very_Pale_Blue;
+    @include mixins.flexSections;
+    @include mixins.flexSections-desktop;
+}
+
+.section-flowing-conversations {
+    @include mixins.flexSections;
+    @include mixins.flexSections-desktop(row-reverse);
+    @include mixins.banner('../images/bg-section-bottom-mobile-1.svg', '../images/bg-section-top-mobile-2.svg');
+    @include mixins.banner-desktop('../images/bg-section-bottom-desktop-1.svg', '../images/bg-section-top-desktop-2.svg');
+}
+
+.section-your-users {
+    background-color: variables.$Very_Pale_Blue;
+    @include mixins.flexSections;
+    @include mixins.flexSections-desktop;
+    /* @include mixins.banner('../images/bg-section-bottom-mobile-1.svg', '../images/bg-section-top-mobile-1.svg'); */
+}
+
+.section-your-comunity {
+    height: 600px;
+    @include mixins.banner('../images/bg-section-bottom-mobile-2.svg', '../images/bg-footer-top-mobile.svg');
+    @include mixins.banner-desktop('../images/bg-section-bottom-desktop-2.svg', '../images/bg-footer-top-desktop.svg');
+    &__title {
+        margin-top: 0;
+        padding-top: 250px;
+        @extend .header__title;
+    }
+    &__button {
+        @extend .header__button;
+    }
+}
+
+@media (min-width:1440px) {
+    .section-your-comunity {
+        height: 800px;
+    }
+    ;
+}
+
+.newsletter {
+    background-color: variables.$Very_Dark_Cyan;
+    color: variables.$Very_Pale_Blue;
+    padding: 70px 24px 40px;
+}
+
+.newsletter-subscription {
+    margin-bottom: 45px;
+    &__title {
+        text-transform: uppercase;
+        font-size: 1.2em;
+        margin-bottom: 28px;
+    }
+    &__description {
+        font-size: 0.95em;
+        margin-bottom: 28px;
+    }
+    &__input {
+        width: 100%;
+        border: none;
+        border-radius: 8px;
+        height: 50px;
+        margin-bottom: 16px;
+    }
+    &__submit-container {
+        display: flex;
+        justify-content: end
+    }
+    &__submit {
+        @include mixins.button(variables.$Pink, unset, variables.$Very_Pale_Blue, 200px, 40px, false);
+        @include mixins.desktop_view(400px, 80px, 1.25em);
+        @include mixins.button-hover(variables.$Light_Pink);
+        text-align: center;
+        border-radius: 8px;
+    }
+}
+
+.newsletter-contact {
+    &__logo-huddle {
+        width: 206px;
+        margin-bottom: 16px;
+    }
+    &__description {
+        font-size: 0.95em;
+        margin-bottom: 28px;
+    }
+    &__phone-container {
+        margin-bottom: 15px;
+    }
+    &__email-container {
+        margin-bottom: 50px;
+    }
+    &__anchor {
+        text-decoration: none;
+        color: variables.$Very_Pale_Blue;
+        margin-left: 20px;
     }
 }
